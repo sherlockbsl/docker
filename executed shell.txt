@@ -1,0 +1,16 @@
+execute shell
+     docker build -t sherlockbsl/docker:latest
+     docker login -u sherlockbsl -p sherlockbsl@123
+     docker push sherlockbsl/docker:latest
+
+executed command
+     docker login -u sherlockbsl -p sherlockbsl@123
+     docker pull sherlockbsl/docker:latest
+      docker run -d --name demo -p 8080:80 sherlockbsl/docker:latest	
+
+
+
+plugin install 
+publish over ssh
+docker pipeline
+ssh agent 
