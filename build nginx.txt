@@ -1,0 +1,26 @@
+ stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('checkout') {
+            steps {
+                echo "performing checkout"
+                checkout([$class:'GitSCM' ,
+                branches:[[name:'master']],
+                 userRemoteConfigs:[[url: 'https://github.com/sherlockbsl/docker.git']]])
+            
+            }
+        }
+        stage('build') {
+            steps {
+                    sh 'docker login -u sherlockbsl -p sherlockbsl@123' 
+                    sh 'docker build -t sherlockbsl/nginx:latest .'
+                    sh 'docker push sherlockbsl/nginx:latest'
+                }
+            }
+        }
+    }
+    
+
