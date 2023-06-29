@@ -22,5 +22,5 @@
             }
         }
     }
-    
+    docker login -u sherlockbsl --password-stdin < /var/lib/jenkins/ashish/pass.txt
 
